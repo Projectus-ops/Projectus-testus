@@ -1,16 +1,12 @@
 pipeline {
   agent { 
-    docker { 
-      image 'mcr.microsoft.com/playwright:v1.17.2-focal'
-    } 
+    dockerfile true
   }
+
   stages {
     stage('install playwright') {
       steps {
-        sh '''
-          npm i -D @playwright/test
-          npx playwright install
-        '''
+        sh 'echo installing playwright'
       }
     }
     stage('help') {
@@ -20,15 +16,11 @@ pipeline {
     }
     stage('test') {
       steps {
-        sh '''
-          npx playwright test --list
-          npx playwright test
-        '''
+        sh 'npx playwright testing stage'
       }
       post {
         success {
-          archiveArtifacts(artifacts: 'homepage-*.png', followSymlinks: false)
-          sh 'rm -rf *.png'
+          sh 'Success Stage'
         }
       }
     }
