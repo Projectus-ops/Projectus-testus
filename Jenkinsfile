@@ -1,13 +1,13 @@
 pipeline {
-  agent { 
-    dockerfile true
-  }
+    
+  agent any
 
   stages {
-    stage('install playwright') {
-      steps {
-        sh 'echo installing playwright'
-      }
+    stage('build') {
+            steps {
+                sh 'node --version'
+                sh 'npm install'
+            }
     }
     stage('help') {
       steps {
