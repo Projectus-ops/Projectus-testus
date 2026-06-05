@@ -3,12 +3,12 @@ pipeline {
     dockerfile true
   }
 
-  stages {
-    stage('build') {
+    stages {
+        stage('Build inside container') {
             steps {
-                sh 'node --version'
-                sh 'npm install'
+                bat 'docker run --rm node:16-alpine node --version'
             }
+        }
     }
     stage('help') {
       steps {
