@@ -1,3 +1,3 @@
-FROM my-node-app
+FROM node:my-node-app
 
 RUN apk add -U git curl
