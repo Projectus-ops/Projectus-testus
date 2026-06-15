@@ -13,7 +13,8 @@ pipeline {
             steps {
                 bat 'npm install'
             }
-        
+        }
+
         stage('Test') {
             steps {
                 bat 'npx playwright test'
@@ -22,6 +23,7 @@ pipeline {
     }
 
     post {
+
         success {
             echo 'SUCCESS: Tests passed'
         }
@@ -30,7 +32,6 @@ pipeline {
             echo 'FAILED: Check logs'
         }
 
-    post {
         always {
 
             // Jenkins test dashboard
