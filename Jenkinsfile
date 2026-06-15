@@ -50,5 +50,4 @@ pipeline {
             archiveArtifacts artifacts: 'playwright-report/**'
         }
     }
-    }
 }
