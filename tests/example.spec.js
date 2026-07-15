@@ -15,6 +15,11 @@ test('login', async ({ homePage, RegisterPage }) => {
 
 });
 
+test('login', async ({ homePage, RegisterPage }) => {
+  await expect(homePage).toHaveTitle(/Demo/);
+
+});
+
 test('has title', async ({ homePage }) => {
   // Expect a title "to contain" a substring.
   await expect(homePage).toHaveTitle(/Demo/);
