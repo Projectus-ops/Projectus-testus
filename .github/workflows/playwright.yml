@@ -54,4 +54,4 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name == 'push' }}
-          tags: yourdockerhubusername/my-app:latest
+          tags: aaron516/welcome-to-docker:latest
