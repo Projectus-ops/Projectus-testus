@@ -15,7 +15,7 @@ test('login', async ({ homePage, RegisterPage }) => {
 
 });
 
-test('login', async ({ homePage, RegisterPage }) => {
+test('login2', async ({ homePage, RegisterPage }) => {
   await expect(homePage).toHaveTitle(/Demo/);
 
 });
