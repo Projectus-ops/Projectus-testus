@@ -5,7 +5,7 @@ exports.expect = expect;
 exports.test = test.extend({
 
     homePage: async ({page}, use ) =>{
-    await page.goto('https://demowebshop.tricentis.com/');
+    await page.goto(process.env.BASE_URL);
     await use(page)
     },
 
